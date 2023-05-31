@@ -1,6 +1,7 @@
-= Turing Pi Kuberenetes Image Generator
+= Turing Pi 2 Kubernetes Image Generator
 
-This repository uses the DietPi configuration files to generate a DietPi image to copy to your compute modules.
+This repository uses the DietPi configuration files to generate a DietPi image to flash to your compute modules. It more or less automated the actions outlined in this walkthrough:
+https://help.turingpi.com/hc/en-us/articles/8942873470877-The-plan
 
 It's actually kind of a pain to go through the process of deploying the images on the compute modules and installing Kubernetes on them so this has automated most everything that can be automated. If you want to be able to flash your Turing Pi back to a state with a fresh Kuberentes cluster every so often, this repository is for you.
 
@@ -10,8 +11,7 @@ Despite that slight drawback, it has the advantage of being able to create a _si
 
 == USAGE
 
-1) Edit the variables at the top of the following files to include your desired IP addresses and compute module serials:
-  - boot/Automation_Custom_PreScript.sh
-  - boot/Automation_Custom_Script.sh
-
-Use make_image.sh to download and modify the image from DietPi by placing the bootstraping scripts on it. Once the image is created follow the instructions on the Turing Pi website.
+* Edit the variables at the top of the following files to include your desired IP addresses and compute module serials:  
+.. boot/Automation_Custom_PreScript.sh
+.. boot/Automation_Custom_Script.sh
+* Use make_image.sh to download and modify the image from DietPi by placing the bootstraping scripts on it. Once the image is created follow the instructions on the Turing Pi website.
